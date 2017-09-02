@@ -31,7 +31,6 @@ typedef NS_ENUM(NSInteger, SWCellState)
 - (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell;
 - (BOOL)swipeableTableViewCell:(SWTableViewCell *)cell canSwipeToState:(SWCellState)state;
 - (void)swipeableTableViewCellDidEndScrolling:(SWTableViewCell *)cell;
-- (void)swipeableTableViewCell:(SWTableViewCell *)cell didScroll:(UIScrollView *)scrollView;
 
 @end
 
@@ -41,6 +40,10 @@ typedef NS_ENUM(NSInteger, SWCellState)
 @property (nonatomic, copy) NSArray *rightUtilityButtons;
 
 @property (nonatomic, weak) id <SWTableViewCellDelegate> delegate;
+
+@property (nonatomic, assign) IBInspectable BOOL isRounded;
+@property (nonatomic, strong) UIScrollView *cellScrollView;
+@property (nonatomic, assign) IBInspectable BOOL middleContent;
 
 - (void)setRightUtilityButtons:(NSArray *)rightUtilityButtons WithButtonWidth:(CGFloat) width;
 - (void)setLeftUtilityButtons:(NSArray *)leftUtilityButtons WithButtonWidth:(CGFloat) width;
